@@ -1,0 +1,73 @@
+﻿<Window x:Class="ConexionABD_2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConexionABD_2"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Label Content="CONEXIÓN A LA BASE DE DATOS:" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10" 
+               FontSize="20" Foreground="DarkBlue" FontWeight="Bold"/>
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="25" Content="Establecer Conexión Remota"
+                x:Name="Servidor_Button" Click="Servidor_Button_Click"/>
+        <Expander x:Name="Expander_BD" Header="Bases de Datos Disponibles." HorizontalAlignment="Right" VerticalAlignment="Center" 
+                  Margin="0,0,200,0" BorderThickness="1" BorderBrush="Gray">
+            <Expander.Content>
+                <ScrollViewer>
+                    <StackPanel x:Name="Contenido_Expander_BD">
+                        
+                    </StackPanel>
+                </ScrollViewer>
+            </Expander.Content>
+        </Expander>
+        <Button x:Name="Conectar_Button" Content="Conectar" HorizontalAlignment="Right" VerticalAlignment="Center" Width="100" Height="20"
+                Margin="0,0,60,0" Click="Conectar_Button_Click"/>
+        <Grid Grid.Row="1" x:Name="Grid_Operacional">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0">
+                <Expander Name="Expander_Tablas" Header="Selecciona una Tabla." HorizontalAlignment="Center" BorderThickness="1"
+                          BorderBrush="Gray" Width="150"  >
+                    <Expander.Content>
+                        <StackPanel x:Name="StackPanel_Opciones">
+
+                        </StackPanel>
+                    </Expander.Content>
+                </Expander>
+                <Button x:Name="Descripcion_Button" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="20" Margin="0,20,0,20" 
+                        Content="Descripción" Click="Descripcion_Button_Click"/>
+                <Button x:Name="Datos_Button" VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="20" Margin="0,0,0,20" Content="Datos"
+                        Click="Datos_Button_Click"/>
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="20" Margin="0,0,0,20" 
+                        Content="Insertar Datos" Click="Insertar_Datos_Button_Click"/>
+                <StackPanel Orientation="Horizontal" >
+                    <TextBox Width="100" Margin="50,0,0,0" Text="ID_Table" HorizontalContentAlignment="Center" Height="20"
+                             x:Name="Eliminar_TextBox"/>
+                    <Button x:Name="Eliminar_Button" Content="Eliminar" Margin="20,0,0,0" Width="90" Click="Eliminar_Button_Click"/>
+                </StackPanel>
+                <Expander Name="Expander_Vistas" Header="Vistas Disponibles." HorizontalAlignment="Center" 
+                          BorderThickness="1" BorderBrush="Gray" Width="150" Margin="0,20,0,0"  >
+                    <Expander.Content>
+                        <ScrollViewer Height="100">
+                            <StackPanel x:Name="StackPanel_OpcionesVistas">
+
+                            </StackPanel>
+                        </ScrollViewer>
+                    </Expander.Content>
+                </Expander>
+                <Button VerticalAlignment="Top" HorizontalAlignment="Center" Width="100" Height="20" Margin="0,20,0,0" 
+                        Content="Datos " x:Name="Vistas_Datos_Button" Click="Vistas_Datos_Button_Click"/>
+            </StackPanel>
+            <Grid x:Name="Grid_Fila1" Grid.Column="1">
+                
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
