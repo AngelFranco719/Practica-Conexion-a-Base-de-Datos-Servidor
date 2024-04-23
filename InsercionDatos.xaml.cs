@@ -18,15 +18,19 @@ using System.Windows.Shapes;
 namespace ConexionABD_2
 {
     /// <summary>
-    /// Lógica de interacción para InsercionDatos.xaml
+    /// LÓGICA PARA CREAR DINAMICAMENTE LA INTERFAZ DE LA INSERCIÓN DE DATOS.
+    /// LÓGICA PARA CREAR SENTENCIAS SQL Y AGREGARLAS A UNA BASE DE DATOS.
     /// </summary>
     public partial class InsercionDatos : UserControl
     {
-        List<TextBox> textBoxes = new List<TextBox>();
-        string Tabla_seleccionada;
-        SqlConnection ConexionSQL; 
-        int numero_columnas=0;
-        string query;
+        /// <summary>
+        ///  DEFINICIÓN DE VARIABLES GLOBALES.
+        /// </summary>
+        List<TextBox> textBoxes = new List<TextBox>(); // Lista de TextBoxes. Necesaria para poder acceder a la información agregada por el usuario.
+        string Tabla_seleccionada; // Variable que guarda la Tabla que el usuario seleccionó para insertar los datos.
+        SqlConnection ConexionSQL; // Variable que recibe la conexión a la Base de Datos.
+        int numero_columnas=0; // Número de columnas que tiene la tabla.
+        string query; // Variable que guardará la sentencia SQL.    
 
         #region Lógica para generar una ventana dinámica para la inserción de datos.
         public InsercionDatos(DataTable Tabla, string Nombre_Tabla, SqlConnection ConexionSQL)
@@ -58,10 +62,10 @@ namespace ConexionABD_2
         }
         #endregion
 
-        #region Retornar el Control de Usuario
+        #region Retornar el Control de Usuario 
         public UserControl getInsercionDatos()
         {
-            return this;
+            return this; 
         }
         #endregion
 

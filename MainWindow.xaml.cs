@@ -19,12 +19,16 @@ using System.Windows.Shapes;
 
 namespace ConexionABD_2
 {
+    /// <summary>
+    /// LÓGICA PARA LA CONEXIÓN A LA BASE DE DATOS Y MODIFICACIÓN DINÁMICA DE LA INTERFAZ.
+    /// </summary>
     public partial class MainWindow : Window
     {
-        SqlConnection ConexionSQL_Master;
-        SqlConnection ConexionSQL; 
-        string nombre_BD;
-        List<string> tablas_BD=new List<string>();  
+        //DEFINICIÓN DE VARIABLES GLOBALES. 
+        SqlConnection ConexionSQL_Master; // Conexión a la Base de Datos MASTER del servidor.
+        SqlConnection ConexionSQL; // Conexión a la Base de Datos seleccionada por el usuario.
+        string nombre_BD; // Variable que guarda la Base de Datos Seleccionada.
+        List<string> tablas_BD=new List<string>();  // Lista que guarda el nombre de todas las tablas de la Base de Datos.
 
         public MainWindow()
         {
@@ -260,6 +264,8 @@ namespace ConexionABD_2
         }
         #endregion
 
+        #region Lógica para Conectar el Servidor con el Cliente.
+
         private void Servidor_Button_Click(object sender, RoutedEventArgs e)
         {
             Servidor Nueva_Conexion = new Servidor();
@@ -290,5 +296,6 @@ namespace ConexionABD_2
                 MessageBox.Show(ex.Message);
             }
         }
+        #endregion
     }
 }

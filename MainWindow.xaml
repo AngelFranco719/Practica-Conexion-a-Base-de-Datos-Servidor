@@ -1,4 +1,5 @@
-﻿<Window x:Class="ConexionABD_2.MainWindow"
+﻿<!-- CÓDIGO XAML PARA CREAR LA INTERFAZ GRÁFICA ESTÁTICA DEL PROYECTO -->
+    <Window x:Class="ConexionABD_2.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
